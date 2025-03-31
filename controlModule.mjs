@@ -72,7 +72,8 @@ export const ControlModule = {
           return;
         }
       } else {
-        // Mismatch: reset sequence2 but stay at the current position in sequence1
+        // Corriger le bug pour que sequence1Index retourne au bon index
+        this.sequence1Index = this.sequence1Index - this.sequence2Index + 1;
         this.sequence2Index = 0; // Reset sequence2 to the beginning
       }
 
